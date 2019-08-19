@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :show]
       post '/login', to: 'auth#create'
       get '/validate', to: 'auth#validate_token'
+      mount ActionCable.server => '/cable'
     end
   end
 end
