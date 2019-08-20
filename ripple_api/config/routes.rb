@@ -7,4 +7,7 @@ Rails.application.routes.draw do
       mount ActionCable.server => '/cable'
     end
   end
+  resources :conversations, only: [:index, :create]
+  resources :messages, only: [:create]
+  mount ActionCable.server => '/cable'
 end
