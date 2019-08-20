@@ -2,6 +2,8 @@ class MessagesController < ApplicationController
     def create
       message = Message.new(message_params)
       conversation = Conversation.find(message_params[:conversation_id])
+      message.user_id = @current_user.id
+      
       if message.save
         serialized_data = ActiveModelSerializers::Adapter::Json.new(
           MessageSerializer.new(message)
@@ -14,6 +16,6 @@ class MessagesController < ApplicationController
     private
     
     def message_params
-      params.require(:message).permit(:text, :conversation_id)
+      params.require(:message).permit(:text, :conversation_id, :user_id)
     end
   end
