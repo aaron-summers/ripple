@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_08_20_124752) do
   create_table "conversations_users", id: false, force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "conversation_id", null: false
+    t.index ["conversation_id", "user_id"], name: "index_conversations_users_on_conversation_id_and_user_id"
+    t.index ["user_id", "conversation_id"], name: "index_conversations_users_on_user_id_and_conversation_id"
   end
 
   create_table "messages", force: :cascade do |t|
