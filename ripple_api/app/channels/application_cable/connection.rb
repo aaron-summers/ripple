@@ -7,12 +7,12 @@ module ApplicationCable
       @current_user
     end
 
-    def find_verified_user
-      # if current_user = User.find_by(id: request.params[:user])
-      #   current_user
-      # else
-      #   reject_unauthorized_connection
-      # end
-    end
+    # def find_verified_user
+    #   # if current_user = User.find_by(id: request.params[:user])
+    #   #   current_user
+    #   # else
+    #   #   reject_unauthorized_connection
+    #   # end
+    # end
   end
 end
