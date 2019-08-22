@@ -24,5 +24,6 @@
 /config/local_env.yml
 /config/credentials.yml.enc
 /config/database.yml
+/config/cable.yml
 
 

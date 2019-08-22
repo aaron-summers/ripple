@@ -6,5 +6,11 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: redis://h:pdcbc0aef8b7dfca8a715a21f820b604b976ae646819ecf00a40076322fe716a2@ec2-52-19-50-176.eu-west-1.compute.amazonaws.com:14939
+  host: ec2-52-19-50-176.eu-west-1.compute.amazonaws.com
+  port: 14939
+  password: pdcbc0aef8b7dfca8a715a21f820b604b976ae646819ecf00a40076322fe716a2
+  inline: true
+  timeout: 1
   channel_prefix: rippleBackUp_production
